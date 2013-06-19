@@ -16,6 +16,7 @@ tmp/**/*
 downloads
 build
 dist
+MANIFEST
  
 # egg related
 develop-eggs

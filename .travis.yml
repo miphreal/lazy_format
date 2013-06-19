@@ -4,4 +4,4 @@ python:
   - "2.6"
   - "3.3"
 install: python setup.py install 
-script: nosetest
+script: nosetests

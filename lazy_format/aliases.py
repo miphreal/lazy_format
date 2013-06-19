@@ -8,7 +8,7 @@ class Aliases(object):
         self.context(context=context)
 
     def __getattr__(self, key):
-        from format import LazyFormat
+        from lazy_format.format import LazyFormat
 
         if key in self._aliases:
             value = self._aliases[key]
@@ -36,7 +36,7 @@ class Aliases(object):
         cls._aliases.clear()
 
     def context(self, context=None):
-        from context import Context
+        from lazy_format.context import Context
         self._runtime_context = context if context is not None else Context()
         return self
 

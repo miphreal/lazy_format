@@ -4,9 +4,9 @@ Provides some classes that allow to manipulate the context data flexibly and
 get lazy object that renders itself only if it's used as a string.
 """
 
-from aliases import Aliases
-from context import Context
-from formatter import LazyFormatter
+from lazy_format.aliases import Aliases
+from lazy_format.context import Context
+from lazy_format.formatter import LazyFormatter
 
 
 class LazyFormat(object):
@@ -34,7 +34,7 @@ class LazyFormat(object):
     __format__ = __unicode__ = __str__ = format
 
     def __add__(self, other):
-        return u'{0!s}{1!s}'.format(self, other)
+        return '{0!s}{1!s}'.format(self, other)
 
     def __eq__(self, other):
         return self.format() == other

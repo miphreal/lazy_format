@@ -1,7 +1,6 @@
 # coding=utf-8
-from aliases import *
-from context import *
-from format import *
+from lazy_format.aliases import Aliases
+from lazy_format.format import LazyFormat, LazyAliasFormat
 
 
 __all__ = ['LazyFormat', 'LazyAliasFormat', 'Aliases']

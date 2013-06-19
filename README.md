@@ -69,7 +69,23 @@ LazyFormat
 >>> lazy4 = LazyAliasFormat('{alias.val}')
 >>> print lazy4
 dyn value for val
-
+>>>
+>>>
+>>> LazyAliasFormat('{project_dir}', alias='dir')
+<lazy_format.format.LazyAliasFormat at 0x22a2a50>
+>>> templates = LazyAliasFormat('{alias.dir}/{template_dir_name}',
+>>>                             template_dir_name='templates',
+>>>                             alias='template_dir')
+>>>
+>>> my_prj_templates = LazyAliasFormat('{alias.template_dir}',
+>>>                                    project_dir='/code/lazy_format',
+>>>                                    template_dir_name='tmps')
+>>> print templates
+{project_dir}/templates
+>>> print my_prj_templates
+/code/lazy_format/tmps
+>>> print my_prj_templates.format(project_dir='/code2')
+/code2/tmps
 ```
 
 

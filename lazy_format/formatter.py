@@ -3,6 +3,13 @@ import string
 
 
 class LazyFormatter(string.Formatter):
+    def vformat(self, format_string, args, kwargs):
+        # this code is copied almomst exactly from strings.py.
+        used_args = set()
+        result = self._vformat(format_string, args, kwargs, used_args, 2)
+        self.check_unused_args(used_args, args, kwargs)
+        return result
+    
     def _unsplit_var(self, conversion, field_name, format_spec):
         variable = (
             '{',
@@ -36,7 +43,6 @@ class LazyFormatter(string.Formatter):
                     rendered = self._unsplit_var(conversion, field_name, format_spec)
 
                 result.append(rendered)
-
         return ''.join(result)
 
 

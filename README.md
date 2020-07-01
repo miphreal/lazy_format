@@ -87,12 +87,3 @@ dyn value for val
 >>> print my_prj_templates.format(project_dir='/code2')
 /code2/tmps
 ```
-
-
-
-
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/miphreal/lazy_format/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

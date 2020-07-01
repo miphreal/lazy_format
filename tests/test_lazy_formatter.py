@@ -5,7 +5,7 @@ A bunch of tests for the LazyFormatter class
 
 import unittest
 
-from lazy_format.formatter import LazyFormatter
+from lazy_format.format import LazyFormatter
 
 
 class LazyFormatterTestCase(unittest.TestCase):
@@ -14,7 +14,7 @@ class LazyFormatterTestCase(unittest.TestCase):
 
     def test_default(self):
         expectation = 'abcde'
-        reality = self.formatter.format('{0}{1}{2}', 'ab', 'cd', 'e')
+        reality = str(self.formatter.format('{0}{1}{2}', 'ab', 'cd', 'e'))
         self.assertEqual(expectation, reality, 'Default format behavior doesn\'t work')
 
     def test_default_keyword_params(self):

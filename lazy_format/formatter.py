@@ -4,7 +4,7 @@ import string
 
 class LazyFormatter(string.Formatter):
     def vformat(self, format_string, args, kwargs):
-        # this code is copied almomst exactly from strings.py.
+        # this code is copied almost exactly from strings.py.
         used_args = set()
         result = self._vformat(format_string, args, kwargs, used_args, 2)
         self.check_unused_args(used_args, args, kwargs)
